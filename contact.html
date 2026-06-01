@@ -48,7 +48,8 @@
 
       <!-- Right Form -->
       <div class="contact-form-container reveal delay-1">
-        <form class="premium-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thanks for reaching out! We will get back to you soon.');">
+        <form class="premium-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="fa176d5a-64e5-4166-9746-41bc07a9ce4d">
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="John Doe" required>

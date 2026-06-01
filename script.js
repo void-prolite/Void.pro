@@ -213,6 +213,55 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
   });
+
+  // Web3Forms AJAX Submission
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      const btn = contactForm.querySelector('.submit-btn');
+      const originalText = btn.innerText;
+      btn.innerText = "Sending...";
+      btn.style.pointerEvents = "none";
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let jsonRes = await response.json();
+        if (response.status == 200) {
+          btn.innerText = "Message Sent!";
+          btn.style.background = "#10b981"; // success green
+          contactForm.reset();
+          setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.background = "var(--text-main)";
+            btn.style.pointerEvents = "auto";
+          }, 4000);
+        } else {
+          console.log(response);
+          btn.innerText = "Error. Try again.";
+          btn.style.background = "#ef4444"; // error red
+          btn.style.pointerEvents = "auto";
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        btn.innerText = "Something went wrong!";
+        btn.style.background = "#ef4444";
+        btn.style.pointerEvents = "auto";
+      });
+    });
+  }
 });
 
 // Update target scroll on wheel/touch
