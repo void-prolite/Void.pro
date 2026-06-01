@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Void.Pro | Contact Us</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor"></div>
+
+  <!-- Floating Pill Navbar -->
+  <div class="nav-wrapper">
+    <nav id="navbar">
+      <a href="index.html" class="logo">Void<span>.</span>Pro</a>
+      <ul class="nav-links">
+        <li><a href="work.html" class="transition-link">Work</a></li>
+        <li><a href="services.html" class="transition-link">Services</a></li>
+        <li><a href="pricing.html" class="transition-link">Pricing</a></li>
+      </ul>
+      <a href="contact.html" class="contact-btn transition-link">Contact</a>
+    </nav>
+  </div>
+
+  <main class="services-page-content" style="padding-top: 10rem;">
+    <div class="contact-grid">
+      <!-- Left Info -->
+      <div class="contact-info reveal">
+        <h1 style="font-size: clamp(3.5rem, 6vw, 5rem); margin-bottom: 1rem; line-height: 1;">Let's build<br>the <span style="color: #a0a0a0;">future.</span></h1>
+        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 400px;">Have a project in mind or just want to say hi? We engineer scalable, premium digital experiences from the ground up.</p>
+        
+        <div class="contact-methods">
+          <div class="method-block">
+            <span class="method-label">Email Us</span>
+            <a href="mailto:void.prolite@gmail.com" class="method-value">void.prolite@gmail.com</a>
+          </div>
+          <div class="method-block">
+            <span class="method-label">Response Time</span>
+            <span class="method-value" style="color: var(--text-main); font-weight: 500;">Within 24-34 hours</span>
+          </div>
+          <div class="method-block">
+            <span class="method-label">Location</span>
+            <span class="method-value" style="color: var(--text-main); font-weight: 500;">Remote / Global</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form -->
+      <div class="contact-form-container reveal delay-1">
+        <form class="premium-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thanks for reaching out! We will get back to you soon.');">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="budget">Project Budget (Optional)</label>
+            <select id="budget" name="budget">
+              <option value="" disabled selected>Select a range</option>
+              <option value="under5k">Under $5k</option>
+              <option value="5k-10k">$5k - $10k</option>
+              <option value="10k+">$10k+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer-spacer">
+    Let's Build Something Great.
+  </div>
+
+  <div class="page-transition-overlay" id="page-transition-overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
