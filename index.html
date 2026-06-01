@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Void.Pro | Premium Design Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor"></div>
+
+  <!-- Fake 404 Overlay -->
+  <div id="fake-404">
+    <div class="fake-404-content">
+      <h1>404?</h1>
+      <p>Don't worry, our websites don't go down that easily ;)</p>
+      <button id="start-btn">Experience</button>
+    </div>
+  </div>
+
+  <!-- Availability Pill (Fixed Top Right) -->
+  <div class="availability">
+    <div class="status-dot"></div>
+    We only take limited clients every month
+  </div>
+
+  <!-- Floating Pill Navbar -->
+  <div class="nav-wrapper">
+    <nav id="navbar">
+      <a href="#" class="logo">Void<span>.</span>Pro</a>
+      <ul class="nav-links">
+        <li><a href="work.html" class="transition-link">Work</a></li>
+        <li><a href="services.html" class="transition-link">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <a href="#contact" class="contact-btn">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Scroll Track for Sticky Sequence -->
+  <div class="scroll-track" id="work">
+    
+    <!-- Hero Section (Sticky) -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Digital partners<br><span class="highlight">driving real growth.</span></h1>
+        <p><strong>We engineer digital experiences that go beyond aesthetics.</strong> By combining stunning design with strategic user flows, we build platforms that captivate your audience and consistently convert them into loyal customers.</p>
+        
+        <a href="#contact" class="book-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.06 19.43 4 16.05 4 12C4 7.95 7.06 4.57 11 4.07V19.93ZM13 4.07C16.94 4.57 20 7.95 20 12C20 16.05 16.94 19.43 13 19.93V4.07Z" fill="white"/>
+          </svg>
+          Book a call with us
+        </a>
+      </div>
+      
+      <div class="hero-visuals">
+        <div class="cards-stack" id="hero-stack">
+          <!-- 4 Stacked Cards -->
+          <a href="https://void-music-pro.vercel.app/" target="_blank" style="text-decoration: none;" class="stack-card card-4">
+            <img src="wavelength.webp" alt="WAVELENGTH Preview" loading="lazy" decoding="async">
+            <div class="card-overlay">
+              <h3>WAVELENGTH</h3>
+              <p>A really premium music site</p>
+            </div>
+          </a>
+          <a href="https://cafe-pro-six.vercel.app/" target="_blank" style="text-decoration: none;" class="stack-card card-3">
+            <img src="freshify.webp" alt="Freshify Preview" loading="lazy" decoding="async">
+            <div class="card-overlay">
+              <h3>Freshify</h3>
+              <p>A really smooth and sweet cafe/smoothie website</p>
+            </div>
+          </a>
+          <a href="https://eraco.vercel.app/" target="_blank" style="text-decoration: none;" class="stack-card card-2">
+            <img src="eraco.webp" alt="Eraco ai Preview" loading="lazy" decoding="async">
+            <div class="card-overlay">
+              <h3>Eraco ai</h3>
+              <p>A premium landing page</p>
+            </div>
+          </a>
+          <a href="https://lumia-estates-pro.vercel.app/" target="_blank" style="text-decoration: none;" class="stack-card card-1">
+            <img src="lumia.webp" alt="Lumia Estates Preview" loading="lazy" decoding="async">
+            <div class="card-overlay">
+              <h3>Lumia Estates</h3>
+              <p>Real estate site</p>
+            </div>
+          </a>
+        </div>
+        
+        <div class="desktop-disclaimer" id="desktop-disclaimer">
+          Use a desktop for the best experience.
+        </div>
+      </div>
+    </section>
+  </div> <!-- End Scroll Track -->
+  <!-- Services Section -->
+  <section class="services" id="services">
+    
+    <!-- Row 1 -->
+    <div class="services-row">
+      <div class="services-header reveal">
+        <h2><span>The website that</span><br>both you and your customers love to use.</h2>
+        <p>We build great UI without ruining the UX. Beautiful, functional, and optimized for conversion.</p>
+      </div>
+      
+      <div class="services-list-container">
+        <div class="service-item reveal delay-1">
+          <div class="service-icon">&#127970;</div>
+          Corporate Websites
+        </div>
+        <div class="service-item reveal delay-2">
+          <div class="service-icon">&#128188;</div>
+          Business Websites
+        </div>
+        <div class="service-item reveal delay-3">
+          <div class="service-icon">&#128722;</div>
+          E-Commerce
+        </div>
+        <div class="service-item reveal delay-4">
+          <div class="service-icon">&#128640;</div>
+          Landing Pages
+        </div>
+        <div class="service-item reveal delay-5">
+          <div class="service-icon">&#128100;</div>
+          Individual Sites
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="services-row">
+      <div class="services-header reveal">
+        <h2><span>Digital experiences that</span><br>help you scale and grow.</h2>
+        <p>We engineer platforms designed specifically to capture leads and turn visitors into loyal customers.</p>
+      </div>
+      
+      <div class="seo-disclaimer reveal delay-2">
+        <p>We don't provide SEO services, but we structure the website properly, generate sitemaps, and follow best practices so search engines and AI search tools can crawl and index the site easily without getting blocked.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Reviews Section (Marquee) -->
+  <section class="reviews reveal" id="reviews">
+    <div class="reviews-header">
+      <h2>What our clients say.</h2>
+    </div>
+    <div class="reviews-track-container">
+      <div class="reviews-track">
+        <!-- Review 1 (Eraco ai) -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"They delivered an amazing interactive site, with incredible creativity and flawless optimization. The bouncy physics blew us away!"</p>
+          <div class="review-author">
+            <strong>Founder</strong>
+            <span>Eraco ai</span>
+          </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Void.Pro created a stunning and seamless web experience that perfectly captured our brand's luxury aesthetic. We've seen a massive increase in engagement."</p>
+          <div class="review-author">
+            <strong>Creative Director</strong>
+            <span>Aura Boutique</span>
+          </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Their attention to detail and expertise in UI design is unparalleled. The custom animations make our site feel incredibly premium."</p>
+          <div class="review-author">
+            <strong>Lead Designer</strong>
+            <span>Elevate Tech</span>
+          </div>
+        </div>
+        <!-- Review 4 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Working with them was a breeze. They delivered a highly optimized and visually beautiful platform that our customers absolutely love."</p>
+          <div class="review-author">
+            <strong>CEO</strong>
+            <span>Nova Dynamics</span>
+          </div>
+        </div>
+        <!-- Duplicate for infinite scroll -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"They delivered an amazing interactive site, with incredible creativity and flawless optimization. The bouncy physics blew us away!"</p>
+          <div class="review-author">
+            <strong>Founder</strong>
+            <span>Eraco ai</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Void.Pro created a stunning and seamless web experience that perfectly captured our brand's luxury aesthetic. We've seen a massive increase in engagement."</p>
+          <div class="review-author">
+            <strong>Creative Director</strong>
+            <span>Aura Boutique</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Their attention to detail and expertise in UI design is unparalleled. The custom animations make our site feel incredibly premium."</p>
+          <div class="review-author">
+            <strong>Lead Designer</strong>
+            <span>Elevate Tech</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Working with them was a breeze. They delivered a highly optimized and visually beautiful platform that our customers absolutely love."</p>
+          <div class="review-author">
+            <strong>CEO</strong>
+            <span>Nova Dynamics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-spacer">
+    Let's Build Something Great.
+  </div>
+
+  <div class="page-transition-overlay" id="page-transition-overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
