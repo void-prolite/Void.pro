@@ -1124,6 +1124,19 @@ a.method-value:hover {
     width: 85%;
     height: 180px;
   }
+  .stack-card img {
+    filter: brightness(0.6);
+  }
+  .card-overlay {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .card-overlay h3 {
+    font-size: 1.8rem;
+  }
+  .card-overlay p {
+    font-size: 0.8rem;
+  }
   nav {
     gap: 1.5rem;
   }
