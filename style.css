@@ -557,15 +557,72 @@ nav {
 
 /* Footer Spacer */
 .footer-spacer {
-  height: 50vh;
+  min-height: 50vh;
   background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 5% 2rem;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  z-index: 10;
+}
+.footer-hero-text {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: center;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  font-family: 'Syne', sans-serif;
+  padding: 4rem 0;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer-logo a {
+  font-family: 'Playfair Display', serif;
   font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
+}
+.footer-logo span {
+  color: #ff3366;
+}
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.footer-links a {
   color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: var(--text-main);
+}
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Custom Cursor */
@@ -1142,6 +1199,36 @@ a.method-value:hover {
   }
   .nav-links {
     display: none;
+  }
+  .footer-spacer {
+    min-height: auto;
+    padding: 3rem 5% 1.5rem;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .footer-content {
+    display: contents;
+  }
+  .footer-logo {
+    order: 1;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .footer-hero-text {
+    order: 2;
+    padding: 0;
+  }
+  .footer-links {
+    order: 3;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0;
+  }
+  .footer-bottom {
+    order: 4;
+    padding-top: 1.5rem;
   }
   .services-row {
     flex-direction: column;
