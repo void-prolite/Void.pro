@@ -119,13 +119,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Custom Cursor Logic
   const cursor = document.querySelector('.cursor');
-  let mouseX = 0, mouseY = 0;
-  let cursorX = 0, cursorY = 0;
+  
+  let storedX = sessionStorage.getItem('cursorX');
+  let storedY = sessionStorage.getItem('cursorY');
+  
+  // Initialize to stored position or off-screen/center
+  let mouseX = storedX ? parseFloat(storedX) : window.innerWidth / 2;
+  let mouseY = storedY ? parseFloat(storedY) : window.innerHeight / 2;
+  let cursorX = mouseX, cursorY = mouseY;
+  let hasMoved = false;
   
   if(cursor) {
+    if (!storedX) cursor.style.opacity = '0'; // Hide until first move if no history
+
     window.addEventListener('mousemove', (e) => {
+      if (!hasMoved && !storedX) {
+        // Snap directly to mouse on first ever movement
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+        cursor.style.opacity = '1';
+      }
+      hasMoved = true;
       mouseX = e.clientX;
       mouseY = e.clientY;
+    });
+
+    window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('cursorX', mouseX);
+      sessionStorage.setItem('cursorY', mouseY);
     });
 
     function renderCursor() {
@@ -327,8 +348,17 @@ function render() {
 
     // 2. Container Move to Center (0.0 to 0.25)
     // When text fades, visual container expands to center
-    let centerShift = mapRange(scrollProgress, 0, 0.25, 0, -250); // Shift left towards center
-    heroVisuals.style.transform = `translateX(${centerShift}px)`;
+    let isMobile = window.innerWidth <= 1024;
+    let centerShiftX = isMobile ? 0 : mapRange(scrollProgress, 0, 0.25, 0, -250); // Shift left towards center
+    let contentHeight = heroContent ? heroContent.offsetHeight : 200;
+    // On mobile, text takes up space and pushes visuals down. We shift visuals up towards center as text fades.
+    let centerShiftY = isMobile ? mapRange(scrollProgress, 0, 0.25, 0, -(contentHeight / 1.5)) : 0;
+    
+    if (isMobile) {
+      heroVisuals.style.transform = `translate(${centerShiftX}px, ${centerShiftY}px)`;
+    } else {
+      heroVisuals.style.transform = `translateX(${centerShiftX}px)`;
+    }
 
     // 3. Initial Stack to Flat Stack (0.0 to 0.25)
     // Card 1 (Top)
@@ -410,7 +440,8 @@ function render() {
     card4.style.filter = `blur(${entryBlur}px)`;
 
     // Scale up slightly to make them feel immersive when centered
-    let globalScale = mapRange(scrollProgress, 0, 0.3, 1, 1.3);
+    let maxScale = isMobile ? 1.05 : 1.3;
+    let globalScale = mapRange(scrollProgress, 0, 0.3, 1, maxScale);
     document.querySelector('.cards-stack').style.transform = `scale(${globalScale})`;
 
     // Animate Desktop Disclaimer
@@ -426,15 +457,24 @@ function render() {
   }
 
   // --- Navbar Logic ---
+  const availability = document.querySelector('.availability');
   if (nav) {
     if (currentScroll > 50) {
       nav.style.transform = 'translateY(-10px)';
       nav.style.background = 'rgba(255, 255, 255, 0.85)';
       nav.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+      if (availability && window.innerWidth <= 1024) {
+        availability.style.opacity = '0';
+        availability.style.pointerEvents = 'none';
+      }
     } else {
       nav.style.transform = 'translateY(0)';
       nav.style.background = 'rgba(255, 255, 255, 0.7)';
       nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
+      if (availability && window.innerWidth <= 1024) {
+        availability.style.opacity = '1';
+        availability.style.pointerEvents = 'auto';
+      }
     }
   }
 

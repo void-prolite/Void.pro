@@ -2,6 +2,10 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+  server: {
+    host: true, // Listen on all network interfaces (for local IP access)
+    allowedHosts: true, // Allow all hosts (fixes Cloudflare/ngrok tunnel blocks)
+  },
   build: {
     rollupOptions: {
       input: {
